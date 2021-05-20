@@ -9,16 +9,16 @@ package lacteos;
  *
  * @author Eduardo
  */
-public class Queso {
+public class Producto {
 
-    String tipo_leche;
-    int cantidad_leche;
-    double peso;
+    private String tipo;
+    private int cantidad_leche;
+    private double peso;
 
     /**
      * Constructor sin parametros
      */
-    public Queso() {
+    public Producto() {
     }
 
     /**
@@ -27,8 +27,8 @@ public class Queso {
      * @param cantidad_leche
      * @param peso
      */
-    public Queso(String tipo_leche, int cantidad_leche, double peso) {
-        this.tipo_leche = tipo_leche;
+    public Producto(String tipo_leche, int cantidad_leche, double peso) {
+        this.tipo = tipo_leche;
         this.cantidad_leche = cantidad_leche;
         this.peso = peso;
     }
@@ -37,16 +37,16 @@ public class Queso {
      *
      * @return
      */
-    public String getTipo_leche() {
-        return tipo_leche;
+    public String getTipo() {
+        return tipo;
     }
 
     /**
      *
-     * @param tipo_leche
+     * @param tipo
      */
-    public void setTipo_leche(String tipo_leche) {
-        this.tipo_leche = tipo_leche;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     /**
@@ -82,15 +82,19 @@ public class Queso {
     }
 
     /**
-     * Metodo que nos permite imprimir la etiqueta del queso
+     * Metodo que nos permite imprimir_cabecera la etiqueta del queso
      */
-    public void imprimir() {
+    public void imprimir_cabecera() {
         System.out.println("QUESERÍA ARTESANA TALAVERA DE LA REINA");
         System.out.println("Registro Sanitario Nº 48/38751");
         System.out.println("Para consultar el lote del producto revise la etiqueta");
-        System.out.println("Peso: " + this.peso);
-        System.out.println("Tipo de leche: " + this.tipo_leche);
-        System.out.println("Cantidad de leche: " + this.cantidad_leche);
+        imprimir_detalle();
+    }
+
+    private void imprimir_detalle() {
+        System.out.println("Peso: " + this.getPeso());
+        System.out.println("Tipo de leche: " + this.getTipo());
+        System.out.println("Cantidad de leche: " + this.getCantidad_leche());
     }
 
 }
